@@ -219,12 +219,39 @@ return (console.log(rollTheDices))
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
-console.log("ESERCIZIO 9")
-
+console.log("ESERCIZIO 9: la soluzione dell'esercizio 9 si trova alla fine, solo dopo aver selezionato una data dal menu apposito")
+document.getElementById("esercizio9").addEventListener('change', howManyDays)
+function howManyDays(){
+  let data = new Date (document.getElementById("esercizio9").value)
+  let now = new Date()
+  let differenza = now - data
+  //converto i millisecondi in giorni e arrotondo per difetto
+  diffGiorni = Math.floor(differenza / 1000 / 60 / 60 / 24)
+  if(diffGiorni >= 0){
+  console.log( "sono passati " +diffGiorni + " giorni") 
+  }
+  else{
+    console.log("mancano "+ Math.abs(diffGiorni) + " giorni")
+  }
+}
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
-console.log("ESERCIZIO 10")
+/* console.log("ESERCIZIO 10: la soluzione dell'esercizio 10 si trova alla fine, solo dopo aver selezionato una data dal menu apposito")
+document.getElementById("esercizio10").addEventListener('submit', isTodayMyBirthday())
+function isTodayMyBirthday(){
+  let today = new Date()
+  let oggi = new Date (today.getDate, today.getMonth)
+  let birthday = new Date(document.getElementById("giorno").value, document.getElementById("mese").value)
+  console.log(oggi)
+  console.log(birthday)
+  if (today == birthday){
+    console.log("AUGURI, È IL TUO COMPLEANNO OGGI. HAI UN ANNO DI PIÚ, SEI UN ANNO PIÚ VECCHIO, SEI UN ANNO PIÚ VICINO ALLA FINE!")
+  }
+  else{
+    console.log("oggi è il tuo NON compleanno, auguri dal cappellaio matto")
+  }
+} */
 // Arrays & Oggetti
 
 // NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
@@ -234,6 +261,12 @@ console.log("ESERCIZIO 10")
   in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
 console.log("ESERCIZIO 11")
+function deleteProp(obj, str){
+  obj= {...movies[0]}
+  str= "Poster"
+  for (key in obj){console.log(key)}
+}
+deleteProp()
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
