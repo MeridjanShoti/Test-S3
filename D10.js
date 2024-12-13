@@ -250,11 +250,16 @@ function isTodayMyBirthday(){
   }
   else if (giorno === today.getDate() && mese === today.getMonth()){
     console.log("AUGURI, È IL TUO COMPLEANNO OGGI. HAI UN ANNO DI PIÚ, SEI UN ANNO PIÚ VECCHIO, SEI UN ANNO PIÚ VICINO ALLA FINE!")
+    console.log(isTodayMyBirthday())
+    return true
   }
   else{
     console.log("oggi è il tuo NON compleanno, auguri dal cappellaio matto")
+    console.log(isTodayMyBirthday())
+    return false
   }
 }
+//effettivamente mi sono accorto alla fine che diceva che voleva tornasse true o false, solo che avendo messo il pulsante dovrei metterne un altro per fare il console.log del booleano
 // Arrays & Oggetti
 
 // NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
