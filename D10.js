@@ -480,13 +480,27 @@ console.log("ESERCIZIO 18: la soluzione dell'esercizio 17 si trova alla fine, so
 document.getElementById("esercizio18").addEventListener('click', searchAndDivide)
 function searchAndDivide(a){
 a = prompt("inserisci qualcosa da cercare")
-let match = 
+let oggetto ={match: [], unmatch: []}
+oggetto.match.push(...movies.filter(element => element.Title.toLowerCase().includes(a.toLowerCase())))
+oggetto.unmatch.push(...movies.filter(element => !element.Title.toLowerCase().includes(a.toLowerCase())))
+console.log(oggetto)
 }
 
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
-console.log("ESERCIZIO 19")
+console.log("ESERCIZIO 19: la soluzione dell'esercizio 19 si trova alla fine, solo dopo averla fatta partire col bottone")
+document.getElementById("esercizio19").addEventListener('click', removeIndex)
+function removeIndex (a){
+  a = prompt("inserisci un numero intero")
+  if (Number.isInteger(parseInt((a)))){
+    movies.splice(a,1)
+  }
+  else{
+    alert("inserisci un numero valido")
+  }
+  console.log(movies)
+}
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
 /* ESERCIZIO 20
