@@ -255,7 +255,7 @@ isTodayMyBirthday() */
 // Arrays & Oggetti
 
 // NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
-
+/* Questo array viene usato per gli esercizi. Non modificarlo. */
 const movies = [
   {
     Title: 'The Lord of the Rings: The Fellowship of the Ring',
@@ -507,30 +507,83 @@ function removeIndex (a){
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
 console.log("ESERCIZIO 20")
+function selectID(){
+  let a = document.getElementById("container")
+  console.log("il contenuto html dell'elemento selezionato con id è: " + a.innerHTML)
+}
+selectID()
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
 console.log("ESERCIZIO 21")
+function selectTD(){
+  let a = document.getElementsByTagName("td")
+  console.log("il seguente array contiene i vari elementi selezionati tramite tag: ")
+  console.log(a)
+}
+selectTD()
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
 console.log("ESERCIZIO 22")
+function stampa(){
+  let a = document.getElementsByTagName("td")
+  console.log("ecco il contenuto dei td: ")
+  for (element of a){
+    console.log(element.innerText)
+  }
+}
+stampa()
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
 console.log("ESERCIZIO 23")
+function coloraLink(){
+  link = document.getElementsByTagName("a")
+  console.log(link)
+  for (let i = 0; i<link.length; i++){
+    link[i].style.backgroundColor = "red"
+  }
+}
+coloraLink()
+console.log("adesso i link nell'html hanno tutti un background rosso")
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
-console.log("ESERCIZIO 24")
+console.log("ESERCIZIO 24: clicca sul pulsante 24 per aggiungere un li")
+document.getElementById("esercizio24").addEventListener('click', addLI)
+function addLI(){
+  let list = document.getElementById("myList")
+  let LI = document.createElement("li")
+  LI.innerText = "sono un list item"
+  list.appendChild(LI)
+}
+console.log("come si può vedere, ogni volta che si preme il pulsante, un list item viene aggiunto")
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
-console.log("ESERCIZIO 25")
+console.log("ESERCIZIO 25: clicca sul pulsante 25 per svuotare la lista")
+document.getElementById("esercizio25").addEventListener('click', svuotaLista)
+function svuotaLista(){
+  let list = document.getElementById("myList").innerHTML= ""
+}
+console.log("come si può vedere, cliccando sul tasto 25, la lista popolata premendo sul tasto 24 viene svuotata")
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 console.log("ESERCIZIO 26")
+function addClass(){
+  let a = document.getElementsByTagName("tr")
+  for (element of a){
+    element.classList.add("test")
+  }
+}
+addClass()
+console.log("per verificare che tutto funzioni correttamente stampo la classe di ogni elemento dell'array")
+for (let i = 0; i<document.getElementsByTagName("tr").length; i++){
+  console.log(document.getElementsByTagName("tr")[i].className)
+}
+
 // [EXTRA] JS Avanzato
 
 /* ESERCIZIO 27
@@ -544,7 +597,16 @@ console.log("ESERCIZIO 26")
   ***
 
 */
-console.log("ESERCIZIO 27")
+console.log("ESERCIZIO 27: clicca sul pulsante 27 per far comparire il mezzo albero")
+document.getElementById("esercizio27").addEventListener('click', halfTree)
+function halfTree(a){
+  a = prompt("inserisci un numero intero")
+  let leaves = []
+  for (i = 0; i<a; i++){
+    leaves.push("*")
+    console.log(leaves.join(""))
+  }
+}
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
 
@@ -556,10 +618,38 @@ console.log("ESERCIZIO 27")
   *****
 
 */
-console.log("ESERCIZIO 28")
+console.log("ESERCIZIO 28: clicca sul pulsante 28 per far comparire l'albero")
+document.getElementById("esercizio28").addEventListener('click', tree)
+function tree(a){
+  a = prompt("inserisci un numero intero")
+  if (Number.isInteger(parseInt(a))){
+    for (let i = 0; i < a; i++) {
+      let spaces = " ".repeat(a - i - 1);
+      let leaves = "*".repeat(2 * i + 1);
+      console.log(spaces + leaves);
+}
+}
+else{
+  alert("inserisci un numero valido!")
+}
+}
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
-console.log("ESERCIZIO 29")
-/* Questo array viene usato per gli esercizi. Non modificarlo. */
+console.log("ESERCIZIO 29: clicca sul pulsante 29 per inserire un numero")
+document.getElementById("esercizio29").addEventListener('click', isItPrime)
+function isItPrime(a){
+a = prompt("inserisci un numero intero")
+if (Number.isInteger(parseInt(a))===false){
+  alert("inserisci un numero valido!")
+}
+else if(parseInt(a)%2===0){
+  console.log(a + " non è un numero primo")
+}
+else{
+  console.log(a + " è un numero primo")
+}
+}
+
+
 
