@@ -250,12 +250,10 @@ function isTodayMyBirthday(){
   }
   else if (giorno === today.getDate() && mese === today.getMonth()){
     console.log("AUGURI, È IL TUO COMPLEANNO OGGI. HAI UN ANNO DI PIÚ, SEI UN ANNO PIÚ VECCHIO, SEI UN ANNO PIÚ VICINO ALLA FINE!")
-    console.log(isTodayMyBirthday())
     return true
   }
   else{
     console.log("oggi è il tuo NON compleanno, auguri dal cappellaio matto")
-    console.log(isTodayMyBirthday())
     return false
   }
 }
