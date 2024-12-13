@@ -96,12 +96,13 @@ console.log(whoIsBigger())
 
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
-console.log("ESERCIZIO 3")
+console.log("ESERCIZIO 3: la soluzione dell'esercizio 3 si trova alla fine, solo dopo averla fatta partire col bottone")
 //ho creato un bottone nell'html per far partire l'esercizio perché sarebbe fastidioso se partisse subito
 document.getElementById("esercizio3").addEventListener('click', splitMe)
 function splitMe(a){
 a = prompt("scrivi una frase da ritornare come un array di parole")
   let parole = a.split(" ")
+  console.log("ESERCIZIO 3")
   console.log("l'array risultante è il seguente:")
   console.log(parole)
 }
@@ -109,26 +110,81 @@ a = prompt("scrivi una frase da ritornare come un array di parole")
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
-//stesso discorso dell'esercizio precedente
+console.log("ESERCIZIO 4: la soluzione dell'esercizio 4 si trova alla fine, solo dopo averla fatta partire col bottone")
 document.getElementById("esercizio4").addEventListener('click', deleteOne)
-console.log("ESERCIZIO 4")
-function deleteOne(a,b){
-
+function deleteOne(stringa,bool){ 
+  console.log("ESERCIZIO 4")
+  stringa = prompt()
+  bool = confirm("ok è true, cancel è false")
+  if (bool === true){
+   stringa = stringa.slice(1)
+  }
+  else{
+     stringa = stringa.slice(0, -1)
+  }
+return console.log(stringa)
 }
+
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
-console.log("ESERCIZIO 5")
+console.log("ESERCIZIO 5: la soluzione dell'esercizio 5 si trova alla fine, solo dopo averla fatta partire col bottone")
+document.getElementById("esercizio5").addEventListener('click', onlyLetters)
+function onlyLetters(string){
+string = prompt("inserisci una stringa mista di lettere e numeri")
+let characters = string.split("")
+let letters = []
+for (element of characters){
+  if (isNaN(element) || element === " "){
+    letters.push(element)
+  }
+}
+return console.log(letters.join(""))
+}
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
-console.log("ESERCIZIO 6")
+console.log("ESERCIZIO 6: la soluzione dell'esercizio 6 si trova alla fine, solo dopo averla fatta partire col bottone")
+document.getElementById("esercizio6").addEventListener('click', isThisAnEmail)
+function isThisAnEmail(email){
+  email = prompt("inserisci un'email")
+  let regex = /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gim;
+  if (regex.test(email)===true){
+    console.log(`indirizzo inserito ${email} è un indirizzo valido`)
+  }
+  else {
+    console.log(`l'indirizzo inserito ${email} NON è un indirizzo valido`)
+  }
+}
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
 console.log("ESERCIZIO 7")
+function whatDayIsIt(){
+  let date = new Date()
+  let numGiorno = date.getDay()
+  let giorno;
+  switch(numGiorno){
+    case 0: giorno = "domenica";
+      break;
+    case 1: giorno = "lunedì";
+      break;
+    case 2: giorno = "martedì";
+      break;
+    case 3: giorno = "mercoledì";
+      break;
+    case 4: giorno = "giovedì";
+      break;
+    case 5: giorno = "venerdì";
+      break;
+    case 6: giorno = "sabato";
+      break;
+  }
+  console.log("oggi è " +giorno)
+}
+whatDayIsIt()
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
   Deve invocare la precedente funzione dice() il numero di volte specificato nel parametro, e deve tornare un oggetto contenente una proprietà "sum":
@@ -141,11 +197,30 @@ console.log("ESERCIZIO 7")
       values: [3, 3, 4]
   }
 */
-console.log("ESERCIZIO 8")
+console.log("ESERCIZIO 8: la soluzione dell'esercizio 8 si trova alla fine, solo dopo averla fatta partire col bottone")
+document.getElementById("esercizio8").addEventListener('click', rollTheDices)
+function rollTheDices(){
+diceNum = parseInt(prompt("inserisci un numero di dadi"))
+let rollTheDices = {}
+  rollTheDices.values = []
+  rollTheDices.sum = 0
+if (Number.isInteger(diceNum)){
+  for (let i =0; i<diceNum; i++){
+  let valore = dice()
+  rollTheDices.values.push(valore)
+  rollTheDices.sum = rollTheDices.sum + valore
+}
+}
+else {
+  alert("inserisci un numero valido")
+}
+return (console.log(rollTheDices))
+}
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
 console.log("ESERCIZIO 9")
+
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
