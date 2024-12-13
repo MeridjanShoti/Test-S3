@@ -469,13 +469,20 @@ for (element of movies){
 }
 console.log("la parola da te cercata è presente nei seguenti film")
 console.log(contains)
+return contains
 }
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
-console.log("ESERCIZIO 18")
+console.log("ESERCIZIO 18: la soluzione dell'esercizio 17 si trova alla fine, solo dopo averla fatta partire col bottone")
+document.getElementById("esercizio18").addEventListener('click', searchAndDivide)
+function searchAndDivide(a){
+a = prompt("inserisci qualcosa da cercare")
+let match = 
+}
+
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
