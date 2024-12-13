@@ -114,7 +114,7 @@ console.log("ESERCIZIO 4: la soluzione dell'esercizio 4 si trova alla fine, solo
 document.getElementById("esercizio4").addEventListener('click', deleteOne)
 function deleteOne(stringa,bool){ 
   console.log("ESERCIZIO 4")
-  stringa = prompt()
+  stringa = prompt("inserisci una stringa a cui togliere un carattere")
   bool = confirm("ok è true, cancel è false")
   if (bool === true){
    stringa = stringa.slice(1)
@@ -238,22 +238,23 @@ function howManyDays(){
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
 console.log("ESERCIZIO 10: per verificare il funzionamento scegli la data del tuo compleanno dal menu a tendina")
-/* document.getElementById("esercizio10").addEventListener('click', isTodayMyBirthday)
-
+/* document.getElementById("esercizio10").addEventListener('click', isTodayMyBirthday) */
+document.getElementById("esercizio10").addEventListener('click', isTodayMyBirthday)
 function isTodayMyBirthday(){
-  console.log("fin qui funziona")
-  a = document.getElementById("giorno")
-  b = document.getElementById("mese")
-  let birthday = new Date(a,b-1)
-  let today = new Date()
   
-  if (birthday.getDate === today.getDate && birthday.getMonth === today.getMonth){
+  giorno = parseInt(prompt("inserisci il giorno del tuo compleanno"))
+  mese = parseInt(prompt("inserisci il mese del tuo compleanno")) -1
+  let today = new Date()
+  if (!Number.isInteger(giorno)||!Number.isInteger(mese)||giorno<=0||giorno>31||mese>12||mese<=0){
+    alert("inserisci dei valori validi!")
+  }
+  else if (giorno === today.getDate() && mese === today.getMonth()){
     console.log("AUGURI, È IL TUO COMPLEANNO OGGI. HAI UN ANNO DI PIÚ, SEI UN ANNO PIÚ VECCHIO, SEI UN ANNO PIÚ VICINO ALLA FINE!")
   }
   else{
     console.log("oggi è il tuo NON compleanno, auguri dal cappellaio matto")
   }
-} */
+}
 // Arrays & Oggetti
 
 // NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
